@@ -131,7 +131,7 @@ def login():
 def menu():
 	try:
 		os.system("clear")
-		licensi = open(".licensi","r").read().strip()
+		licensi = open(".licensi","w").read().strip()
 		gets = requests.get("https://fbkey.ratuerror.com/check.php?key=%s&dev=%s" % (licensi.strip(), platform.platform())).json()
 		if "error" in gets["status"]:
 			exit(" [×] message: "+gets["msg"]+"\n\n")
