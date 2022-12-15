@@ -211,7 +211,7 @@ def publik(token,cookie):
 			po = requests.get(f"https://graph.facebook.com/v13.0/{user}?fields=friends.limit(5000)&access_token={token}",cookies=cookie).json()
 			for i in po['friends']['data']:
 				id.append(f"{i['id']}<=>{i['name']}")
-			sys.stdout.write (f'\r + mengumpulkan ID{M} >{H} {str(len(id))} '),
+			sys.stdout.write (f'\r {P}Jumlah ID{M} :{H} {str(len(id))} '),
 			sys.stdout.flush();jeda(0.0050)
 	except KeyError:
 		exit(f"{M} gagal mengambil ID")
@@ -222,7 +222,7 @@ def publik(token,cookie):
 #--- massal
 def massal(token,cookie):
 	try:
-		jum = int(input(f"{P} ? Jumlah target: "))
+		jum = int(input(f"{P} Jumlah target : "))
 		print ('')
 	except:jum=1
 	for t in range(jum):
@@ -237,7 +237,7 @@ def massal(token,cookie):
 					id.append(f"{i['id']}<=>{i['name']}")
 		except KeyError:
 			exit(f"{M} gagal mengambil ID")
-	print (f'\r + mengumpulkan ID{M} >{H} {len(id)} ')
+	print (f'\r {P}Jumlah ID{M} :{H} {len(id)} ')
 	
 	return crack().__xnx__(id)
 
