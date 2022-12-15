@@ -132,11 +132,11 @@ def menu():
 	banner()
 	print('')
 	print('')
-	print (' %s[%s1%s] %sCrack dari publik'%(O,P,O,P))
-	print (' %s[%s2%s] %sCrack %sUNLIMITED'%(O,P,O,P,H))
-	print (' %s[%s3%s] %sCrack %sLihat hasil crack'%(O,P,O,P,H))
-	print (' %s[%s4%s] %sCrack %sSetting user agent'%(O,P,O,P,H))
-	print (' %s[%s0%s] %sCrack %sKeluar'%(O,P,O,P,H))
+	print (' 1. Crack dari publik')
+	print (' 2. Crack UNLIMITED')
+	print (' 3. Crack Lihat hasil crack')
+	print (' 4. Crack Setting user agent')
+	print (' 0. Crack Keluar')
 
 def activate_licensi():
 	os.system("clear")
