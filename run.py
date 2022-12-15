@@ -128,7 +128,7 @@ def login():
 		print(e)
 		exit()
 #--- menu 
-def Menu():
+def menu():
 	try:
 		os.system("clear")
 		licensi = open(".licensi","r").read().strip()
