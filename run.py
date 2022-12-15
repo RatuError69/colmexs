@@ -104,10 +104,10 @@ ok = []
 loop = 0
 	
 #--- login
-def login():
+ef login():
 	try:
 		ses = requests.Session()
-		cookie = input(f'\n{P} (' Masukan cookie anda :{K} ')
+		cookie = input(f'\n{P} Masukan cookie anda :{K} ')
 		cookies = {'cookie':cookie}
 		url = 'https://www.facebook.com/adsmanager/manage/campaigns'
 		req = ses.get(url,cookies=cookies)
@@ -130,7 +130,6 @@ def login():
 #--- menu 
 def menu():
 	os.system("clear")
-	logo()
 	try:
 		token = open("data/token.txt","r").read()
 		coki = {"cookie":open("data/cookie.txt","r").read()}
