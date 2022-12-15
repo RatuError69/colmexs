@@ -211,7 +211,7 @@ def publik(token,cookie):
 			po = requests.get(f"https://graph.facebook.com/v13.0/{user}?fields=friends.limit(5000)&access_token={token}",cookies=cookie).json()
 			for i in po['friends']['data']:
 				id.append(f"{i['id']}<=>{i['name']}")
-			sys.stdout.write (f'\r {P}Jumlah ID{M} :{H} {str(len(id))} '),
+			sys.stdout.write (f'\r {P}Jumlah ID :{H} {str(len(id))} '),
 			sys.stdout.flush();jeda(0.0050)
 	except KeyError:
 		exit(f"{M} gagal mengambil ID")
