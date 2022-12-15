@@ -336,10 +336,10 @@ class crack:
 		if cx in ('y'):
 			self.manual()
 		elif cx in ('t'):
-print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode api
-print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode mbasic
-print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode mobile 
-			""");self.langsung()
+		print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode api
+		print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode mbasic
+		print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode mobile 
+			self.langsung()
 		else:
 			exit()
 	
