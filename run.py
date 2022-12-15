@@ -81,7 +81,7 @@ def logo():
 	jalan ('\x1b[1;97m                 --__    \ --    _          /\ ')
 	jalan ('\x1b[1;97m                      --__-__     \_____/   \_/\ ')
 	jalan ('\x1b[1;97m                            ----|   /          | ')
-	jalan ('\x1b[1;96mAuthor \x1b[1;97m : \x1b[1;94mRomi Afrizal\x1b[1;97m          |  |___________| ')
+	jalan ('\x1b[1;96mAuthor \x1b[1;97m : \x1b[1;91mRomi Afrizal\x1b[1;97m          |  |___________| ')
 	jalan ('\x1b[1;96mAdmin  \x1b[1;97m : \x1b[1;93mJessica Putri\x1b[1;97m         |  | ((_(_)| )_) ')
 	jalan ('\x1b[1;96mGroup\x1b[1;97m   : \x1b[1;92mRATU ERROR            \33[0;1m\x1b[1;97m|  \_((_(_)|/(_) ')
 	jalan ('\x1b[1;96m¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤\x1b[1;97m\             ( ')
@@ -171,7 +171,7 @@ def menu():
 def activate_licensi():
 	os.system("clear")
 	logo()
-	print("\n\n\x1b[1;97mSudah mempunyai licensi key? ketik \x1b[1;92madmin\x1b[1;97m untuk chat admin, ketik \x1b[1;93mgets\x1b[1;97m untuk mengambil licensi melalui website RATUERROR\n")
+	print("\n\n\x1b[1;97mKetik \x1b[1;92madmin\x1b[1;97m untuk chat admin dan mendapatkanlisensi script...!!!\n")
 	key = input(" [>] licensi: ").lower()
 	if "gets" in key:
 		os.system("xdg-open https://fbkey.ratuerror.com/register/")
