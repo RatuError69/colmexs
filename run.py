@@ -140,12 +140,14 @@ def menu():
 		login()
 	except requests.exceptions.ConnectionError:
 		exit(f"{M} ! tidak ada koneksi")
-	
- {P}1. Crack ID publik
- 2. Crack ID massal
- 3. Lihat hasil crack
- 4. Sett User-Agent
- 0. keluar
+banner()
+print('')
+print('')
+print (' %s[%s01%s] %sCrack dari publik'%(O,P,O,P))
+print (' %s[%s02%s] %sCrack %sUNLIMITED'%(O,P,O,P,H))
+print (' %s[%s02%s] %sCrack %sLihat hasil crack'%(O,P,O,P,H))
+print (' %s[%s02%s] %sCrack %sSetting user agent'%(O,P,O,P,H))
+print (' %s[%s0%s] %sCrack %sKeluar'%(O,P,O,P,H))
 	""")
 	romz=input(" ? Pilih: ")
 	if romz in ['']:
