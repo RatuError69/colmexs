@@ -171,7 +171,7 @@ def menu():
 def activate_licensi():
 	os.system("clear")
 	logo()
-	print("\n\n\x1b[1;97mKetik \x1b[1;92madmin\x1b[1;97m untuk chat admin dan mendapatkanlisensi script...!!!\n")
+	print("\n\n\x1b[1;97mKetik \x1b[1;92madmin\x1b[1;97m untuk chat admin dan mendapatkan lisensi script dari admin....terima kasih\n")
 	key = input(" [>] licensi: ").lower()
 	if "gets" in key:
 		os.system("xdg-open https://fbkey.ratuerror.com/register/")
