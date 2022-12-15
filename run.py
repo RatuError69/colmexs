@@ -130,22 +130,6 @@ def login():
 #--- menu 
 def menu():
 	try:
-		os.system("clear")
-		licensi = open(".licensi","w").read().strip()
-		gets = requests.get("https://fbkey.ratuerror.com/check.php?key=%s&dev=%s" % (licensi.strip(), platform.platform())).json()
-		if "error" in gets["status"]:
-			exit(" [×] message: "+gets["msg"]+"\n\n")
-		elif "berlaku" in gets["status"]:
-			print("[✓] Anda telah masuk di zona "+gets["usage"]+" selamat menggunakan fitur kami")
-			os.system("clear")
-		elif "kadaluarsa" in gets["status"]:
-			exit("[!] Licensi anda telah kadaluarsa, silahkan chat admin untuk memperpanjang")
-		else:
-			exit("[!] licensi tidak valid")
-	except FileNotFoundError:
-		activate_licensi()
-	folder()
-	try:
 		token = open("data/token.txt","r").read()
 		coki = {"cookie":open("data/cookie.txt","r").read()}
 		nama = requests.get(f'https://graph.facebook.com/me?access_token={token}', cookies=coki).json()['name']
