@@ -147,7 +147,8 @@ def menu():
 	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mLihat hasil crack')
 	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mSetting user agent')
 	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mKeluar')
-	romz=input(" ? Pilih: ")
+	print('')
+	romz=input(" \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mPILIH : ")
 	if romz in ['']:
 		print ("\n ! jangan kosong")
 	elif romz in ['1']:
