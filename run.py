@@ -148,7 +148,7 @@ def menu():
 	print (' \x1b[1;96m[\x1b[1;97m4\x1b[1;96m] \x1b[1;97mSetting user agent')
 	print (' \x1b[1;96m[\x1b[1;97m0\x1b[1;96m] \x1b[1;91mKeluar')
 	print('')
-	romz=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH : ")
+	romz=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
 	if romz in ['']:
 		print ("\n ! jangan kosong")
 	elif romz in ['1']:
@@ -204,7 +204,7 @@ id =[]
 #--- publik
 def publik(token,cookie):
 	try:
-		user=input(f"\n{P} ? ID publik: ")
+		user=input(f"\n{P} Masukan ID publik :\x1b[1;93m ")
 		if user in pepek:
 			exit("\n ! gk usah tolol")
 		else:
