@@ -135,7 +135,7 @@ def menu():
 	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mCrack dari  ID publik')
 	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mCrack \x1b[1;92mUNLIMITED')
 	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mLihat hasil crack')
-	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97Setting user agent')
+	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mSetting user agent')
 	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mKeluar')
 	romz=input(" ? Pilih: ")
 	if romz in ['']:
