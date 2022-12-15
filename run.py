@@ -104,7 +104,7 @@ ok = []
 loop = 0
 	
 #--- login
-ef login():
+def login():
 	try:
 		ses = requests.Session()
 		cookie = input(f'\n{P} Masukan cookie anda :{K} ')
