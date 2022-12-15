@@ -333,12 +333,14 @@ class crack:
 	def __xnx__(self,id):
 		self.id =id 
 		cx=input(f" {P}Gunakan password manual y/t :\x1b[1;93m ")
+		print ('')
 		if cx in ('y'):
 			self.manual()
 		elif cx in ('t'):
 			print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode api')
 			print (' \x1b[1;96m[\x1b[1;97m2\x1b[1;96m] \x1b[1;97mMethode mbasic')
 			print (' \x1b[1;96m[\x1b[1;97m3\x1b[1;96m] \x1b[1;97mMethode mobile')
+			print ('')
 			self.langsung()
 		else:
 			exit()
@@ -353,8 +355,8 @@ class crack:
 		else:
 			pass 
 		print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode api')
-		print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode mbasic')
-		print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode mobile')
+		print (' \x1b[1;96m[\x1b[1;97m2\x1b[1;96m] \x1b[1;97mMethode mbasic')
+		print (' \x1b[1;96m[\x1b[1;97m3\x1b[1;96m] \x1b[1;97mMethode mobile')
 		men=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
 		print (f"""
  + akun {H}OK {P}tersimpan di:{H} OK/{waktu}.txt{P}
