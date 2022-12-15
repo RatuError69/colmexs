@@ -107,7 +107,7 @@ loop = 0
 def login():
 	try:
 		ses = requests.Session()
-		cookie = input(f'\n{P} (' \x1b[1;96m[\x1b[1;97m!\x1b[1;96m] \x1b[1;97mMAsukan cookie anda :{K} ')
+		cookie = input(f'\n{P} (' Masukan cookie anda :{K} ')
 		cookies = {'cookie':cookie}
 		url = 'https://www.facebook.com/adsmanager/manage/campaigns'
 		req = ses.get(url,cookies=cookies)
@@ -135,7 +135,7 @@ def menu():
 		coki = {"cookie":open("data/cookie.txt","r").read()}
 		nama = json.loads(requests.get(f'https://graph.facebook.com/me?fields=name,id&access_token={token}',cookies=coki).text)["name"] 
 	except (FileNotFoundError,KeyError,IOError):
-		print (f"{M} (' \x1b[1;96m[\x1b[1;97m!\x1b[1;96m] \x1b[1;97m cookie invalid");jeda(2)
+		print (f"{M} (' Cookie invalid");jeda(2)
 		login()
 	except requests.exceptions.ConnectionError:
 		exit(f"{M} ! tidak ada koneksi")
