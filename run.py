@@ -336,10 +336,9 @@ class crack:
 		if cx in ('y'):
 			self.manual()
 		elif cx in ('t'):
-			print (f"""
- {P}1. methode api
- 2. methode mbasic
- 3. methode mobile 
+print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode api
+print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode mbasic
+print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode mobile 
 			""");self.langsung()
 		else:
 			exit()
@@ -353,12 +352,12 @@ class crack:
 			exit("\n ! password minimal 6 huruf")
 		else:
 			pass 
-		print (f"""
- {P}1. methode api
- 2. methode mbasic
- 3. methode mobile 
-		""")
-		men=input(" ? Pilih: ")
+
+print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode api
+print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode mbasic
+print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode mobile 
+
+		men=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
 		print (f"""
  + akun {H}OK {P}tersimpan di:{H} OK/{waktu}.txt{P}
  + akun {K}CP {P}tersimpan di:{K} CP/{waktu}.txt{P}
