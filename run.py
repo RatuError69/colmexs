@@ -129,6 +129,16 @@ def login():
 		exit()
 #--- menu 
 def menu():
+	os.system("clear")
+	try:
+		token = open("data/token.txt","r").read()
+		coki = {"cookie":open("data/cookie.txt","r").read()}
+		nama = json.loads(requests.get(f'https://graph.facebook.com/me?fields=name,id&access_token={token}',cookies=coki).text)["name"] 
+	except (FileNotFoundError,KeyError,IOError):
+		print (f"{M} ! cookie invalid");jeda(2)
+		login()
+	except requests.exceptions.ConnectionError:
+		exit(f"{M} ! tidak ada koneksi")
 	banner()
 	print('')
 	print('')
