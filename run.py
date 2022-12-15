@@ -332,7 +332,7 @@ class crack:
 	
 	def __xnx__(self,id):
 		self.id =id 
-		cx=input(f" {P}Gunakan password manual y/t :\x1b[1;93m ")
+		cx=input(f" {P}Gunakan password manual {H}y{P}/{M}t {P}:\x1b[1;93m ")
 		print ('')
 		if cx in ('y'):
 			self.manual()
