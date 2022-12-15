@@ -136,11 +136,10 @@ def menu():
 		coki = {"cookie":open("data/cookie.txt","r").read()}
 		nama = json.loads(requests.get(f'https://graph.facebook.com/me?fields=name,id&access_token={token}',cookies=coki).text)["name"] 
 	except (FileNotFoundError,KeyError,IOError):
-		print (f"{M} ! cookie invalid");jeda(2)
+		#print (f"{M} ! cookie invalid");jeda(2)
 		login()
 	except requests.exceptions.ConnectionError:
 		exit(f"{M} ! tidak ada koneksi")
-	print (f"""{P} [ welcome {H}{nama} {P}]
 	
  {P}1. Crack ID publik
  2. Crack ID massal
