@@ -148,7 +148,7 @@ print (' %s[%s02%s] %sCrack %sUNLIMITED'%(O,P,O,P,H))
 print (' %s[%s02%s] %sCrack %sLihat hasil crack'%(O,P,O,P,H))
 print (' %s[%s02%s] %sCrack %sSetting user agent'%(O,P,O,P,H))
 print (' %s[%s0%s] %sCrack %sKeluar'%(O,P,O,P,H))
-	""")
+
 	romz=input(" ? Pilih: ")
 	if romz in ['']:
 		print ("\n ! jangan kosong")
