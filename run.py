@@ -170,6 +170,7 @@ def menu():
 
 def activate_licensi():
 	os.system("clear")
+	logo()
 	print("\n\n\x1b[1;97mSudah mempunyai licensi key? ketik \x1b[1;92madmin\x1b[1;97m untuk chat admin, ketik \x1b[1;93mgets\x1b[1;97m untuk mengambil licensi melalui website RATUERROR\n")
 	key = input(" [>] licensi: ").lower()
 	if "gets" in key:
