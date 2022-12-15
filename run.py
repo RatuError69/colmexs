@@ -137,32 +137,6 @@ def menu():
 	print (' 3. Crack Lihat hasil crack')
 	print (' 4. Crack Setting user agent')
 	print (' 0. Crack Keluar')
-
-def activate_licensi():
-	os.system("clear")
-	logo()
-	print("\n\n\x1b[1;97mKetik \x1b[1;92madmin\x1b[1;97m untuk chat admin dan mendapatkan lisensi script dari admin....terima kasih\n")
-	key = input("\x1b[1;96m[\x1b[1;97m>\x1b[1;96m]\x1b[1;97m licensi: ").lower()
-	if "gets" in key:
-		os.system("xdg-open https://fbkey.ratuerror.com/register/")
-		activate_licensi()
-	elif "admin" in key:
-		os.system("xdg-open https://wa.me/6287799183568?text=RATU%20COLMEX's....beli%20lisensi%20dooong")
-		activate_licensi()
-	else:
-		gets = requests.get("https://fbkey.ratuerror.com/check.php?key=%s&dev=%s" % (key.strip(), platform.platform())).json()
-		if "error" in gets["status"]:
-			exit(" [×] message: "+gets["msg"]+"\n\n")
-		elif "berlaku" in gets["status"]:
-			print("[✓] Anda telah masuk di zona "+gets["usage"]+" selamat menggunakan fitur kami")
-			open(".licensi","w").write(key.strip())
-			Menu()
-			os.system("clear")
-		elif "kadaluarsa" in gets["status"]:
-			exit("[!] Licensi anda telah kadaluarsa, silahkan chat admin untuk memperpanjang")
-		else:
-			exit("[!] licensi tidak valid")
-			
 	romz=input(" ? Pilih: ")
 	if romz in ['']:
 		print ("\n ! jangan kosong")
@@ -189,6 +163,31 @@ def activate_licensi():
 		exit()
 	else:
 		print ("\n ! isi yg benar")
+
+def activate_licensi():
+	os.system("clear")
+	logo()
+	print("\n\n\x1b[1;97mKetik \x1b[1;92madmin\x1b[1;97m untuk chat admin dan mendapatkan lisensi script dari admin....terima kasih\n")
+	key = input("\x1b[1;96m[\x1b[1;97m>\x1b[1;96m]\x1b[1;97m licensi: ").lower()
+	if "gets" in key:
+		os.system("xdg-open https://fbkey.ratuerror.com/register/")
+		activate_licensi()
+	elif "admin" in key:
+		os.system("xdg-open https://wa.me/6287799183568?text=RATU%20COLMEX's....beli%20lisensi%20dooong")
+		activate_licensi()
+	else:
+		gets = requests.get("https://fbkey.ratuerror.com/check.php?key=%s&dev=%s" % (key.strip(), platform.platform())).json()
+		if "error" in gets["status"]:
+			exit(" [×] message: "+gets["msg"]+"\n\n")
+		elif "berlaku" in gets["status"]:
+			print("[✓] Anda telah masuk di zona "+gets["usage"]+" selamat menggunakan fitur kami")
+			open(".licensi","w").write(key.strip())
+			Menu()
+			os.system("clear")
+		elif "kadaluarsa" in gets["status"]:
+			exit("[!] Licensi anda telah kadaluarsa, silahkan chat admin untuk memperpanjang")
+		else:
+			exit("[!] licensi tidak valid")
 
 id =[]
 #--- publik
