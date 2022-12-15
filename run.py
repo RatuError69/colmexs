@@ -378,7 +378,7 @@ class crack:
 		self.hasil(ok,cp)
 		
 	def langsung(self):
-		men=input(" ? Pilih: ")
+		men=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
 		print (f"""
  + akun {H}OK {P}tersimpan di:{H} OK/{waktu}.txt{P}
  + akun {K}CP {P}tersimpan di:{K} CP/{waktu}.txt{P}
