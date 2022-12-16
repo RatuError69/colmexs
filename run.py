@@ -244,7 +244,7 @@ def massal(token,cookie):
 	for t in range(jum):
 		t +=1
 		try:
-			user=input(f"{P} ? ID publik {t}: ")
+			user=input(f"{P} Masukan ID publik {t}: ")
 			if user in pepek:
 				exit("\n ! gk usah tolol")
 			else:
