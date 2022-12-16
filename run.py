@@ -238,6 +238,7 @@ def publik(token,cookie):
 #--- massal
 def massal(token,cookie):
 	try:
+		print ('')
 		jum = int(input(f"{P} Jumlah target : "))
 		print ('')
 	except:jum=1
