@@ -376,9 +376,9 @@ class crack:
 		print (' \x1b[1;96m[\x1b[1;97m3\x1b[1;96m] \x1b[1;97mMethode mobile')
 		men=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
 		print (f"""
- {P}+ akun {H}OK {P}tersimpan di:{H} OK/{waktu}.txt{P}
- + akun {K}CP {P}tersimpan di:{K} CP/{waktu}.txt{P}
- + crack sedang berjalan... 
+ \x1b[1;97makun {H}OK {P}tersimpan di:{H} OK/{waktu}.txt{P}
+ akun {K}CP {P}tersimpan di:{K} CP/{waktu}.txt{P}
+ crack sedang berjalan... 
 		""")
 		with Romz_Xyz(max_workers=30) as titid:
 			for akun in id:
