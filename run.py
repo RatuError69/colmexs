@@ -245,7 +245,7 @@ def massal(token,cookie):
 	for t in range(jum):
 		t +=1
 		try:
-			user=input(f"{P} Masukan ID publik {t}: ")
+			user=input(f"{P} Masukan ID publik {t}:\x1b[1;93m ")
 			if user in pepek:
 				exit("\n ! gk usah tolol")
 			else:
@@ -376,7 +376,7 @@ class crack:
 		print (' \x1b[1;96m[\x1b[1;97m3\x1b[1;96m] \x1b[1;97mMethode mobile')
 		men=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
 		print (f"""
- + akun {H}OK {P}tersimpan di:{H} OK/{waktu}.txt{P}
+ {P}+ akun {H}OK {P}tersimpan di:{H} OK/{waktu}.txt{P}
  + akun {K}CP {P}tersimpan di:{K} CP/{waktu}.txt{P}
  + crack sedang berjalan... 
 		""")
