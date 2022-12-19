@@ -276,7 +276,7 @@ def hasil():
 				oke.append(file)
 		except:pass 
 		if len(oke)==0:
-			exit("\n {P}File tidak tersedia")
+			exit("\n File tidak tersedia")
 		else:
 			print(f'\n + Hasil akun {H}OK{P} yg fersimpan di folder anda')
 			nomor = 0
@@ -309,7 +309,7 @@ def hasil():
 				cepe.append(file)
 		except:pass 
 		if len(cepe)==0:
-			exit("\n {P}File tidak tersedia")
+			exit("\n File tidak tersedia")
 		else:
 			print(f'\n + Hasil akun {K}CP{P} yg fersimpan di folder anda')
 			nomor = 0
