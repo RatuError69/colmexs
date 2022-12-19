@@ -322,7 +322,7 @@ def hasil():
 			try:
 				hasil = cepe[int(file)-1]
 			except (KeyError,IndexError,ValueError):
-				exit ('\n Isi yang benar")
+				exit ("\n Isi yang benar")
 			nm_file = hasil.replace("-", " ")
 			file_nm = nm_file.replace('.txt', '')
 			totalcp = open(f"CP/{hasil}", "r").read().splitlines()
