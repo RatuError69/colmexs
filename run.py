@@ -262,13 +262,13 @@ def massal(token,cookie):
 oke,cepe=[],[]
 def hasil():
 	print(f"""
- {P}1. Cek hasil akun {H}OK{P}
+ {B}[{P}1{B}] {P}Cek hasil akun {H}OK{P}
  2. Cek hasil akun {K}CP{P}
  0. Kembali
 	""")
-	rom = input(' ? Pilih: ')
+	rom = input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
 	if rom in['']:
-		exit("\n ! isi yg benar")
+		exit("\n Isi yg benar")
 	elif rom in['1','01']: 
 		try:
 			dirs = os.listdir('OK')
