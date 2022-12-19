@@ -263,8 +263,8 @@ oke,cepe=[],[]
 def hasil():
 	print(f"""
  {B}[{P}1{B}] {P}Cek hasil akun {H}OK{P}
- 2. Cek hasil akun {K}CP{P}
- 0. Kembali
+ {B}[{P}2{B}] {P}Cek hasil akun {K}CP{P}
+ {B}[{P}0{B}] {P}Kembali
 	""")
 	rom = input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
 	if rom in['']:
