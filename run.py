@@ -289,7 +289,7 @@ def hasil():
 			try:
 				hasil = oke[int(file)-1]
 			except (KeyError,IndexError,ValueError):
-				exit ('\nIsi yang benar")
+				exit ("\n Isi yang benar")
 			nm_file = hasil.replace("-", " ")
 			file_nm = nm_file.replace('.txt', '')
 			totalok = open(f"OK/{hasil}", "r").read().splitlines()
