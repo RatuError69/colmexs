@@ -276,7 +276,7 @@ def hasil():
 				oke.append(file)
 		except:pass 
 		if len(oke)==0:
-			exit("\n File tidak tersedia")
+			exit("\n {P}File tidak tersedia")
 		else:
 			print(f'\n + Hasil akun {H}OK{P} yg fersimpan di folder anda')
 			nomor = 0
@@ -285,11 +285,11 @@ def hasil():
 				nomor+=1
 				print(f"{P} {str(nomor)}.{H} {i} {P}-{H} {str(len(fil))} ")
 			print(f"{P}\n + silahkan pilih nomor yg ingin di cek")
-			file = input(f" ? nomor: ")
+			file = input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97NOMOR :\x1b[1;93m ")
 			try:
 				hasil = oke[int(file)-1]
 			except (KeyError,IndexError,ValueError):
-				exit ('\n ! isi yg benar')
+				exit ('\n {P}Isi yang benar")
 			nm_file = hasil.replace("-", " ")
 			file_nm = nm_file.replace('.txt', '')
 			totalok = open(f"OK/{hasil}", "r").read().splitlines()
@@ -309,7 +309,7 @@ def hasil():
 				cepe.append(file)
 		except:pass 
 		if len(cepe)==0:
-			exit("\n ! file tidak tersedia")
+			exit("\n {P}File tidak tersedia")
 		else:
 			print(f'\n + Hasil akun {K}CP{P} yg fersimpan di folder anda')
 			nomor = 0
@@ -322,7 +322,7 @@ def hasil():
 			try:
 				hasil = cepe[int(file)-1]
 			except (KeyError,IndexError,ValueError):
-				exit ('\n ! isi yg benar')
+				exit ('\n {P}Isi yang benar")
 			nm_file = hasil.replace("-", " ")
 			file_nm = nm_file.replace('.txt', '')
 			totalcp = open(f"CP/{hasil}", "r").read().splitlines()
