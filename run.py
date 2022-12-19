@@ -262,7 +262,7 @@ def massal(token,cookie):
 oke,cepe=[],[]
 def hasil():
 	print(f"""
- 1. Cek hasil akun {H}OK{P}
+ {P}1. Cek hasil akun {H}OK{P}
  2. Cek hasil akun {K}CP{P}
  0. Kembali
 	""")
@@ -276,7 +276,7 @@ def hasil():
 				oke.append(file)
 		except:pass 
 		if len(oke)==0:
-			exit("\n ! file tidak tersedia")
+			exit("\n File tidak tersedia")
 		else:
 			print(f'\n + Hasil akun {H}OK{P} yg fersimpan di folder anda')
 			nomor = 0
