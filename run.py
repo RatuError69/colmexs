@@ -534,8 +534,10 @@ class crack:
 
 
 if __name__=="__main__":
-	#os.system("clear")
-	#os.system("git pull")
+	try:os.mkdir('OK')
+	except:pass 
+	try:os.mkdir('CP')
+	except:pass 
 	try:os.mkdir('data')
 	except:pass 
 	menu()
