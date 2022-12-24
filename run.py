@@ -434,7 +434,7 @@ class crack:
 		self.hasil(ok,cp)
 					
 	#--- methode
-	def __crack__(self, user, peweh, url_log):
+	def __crack__(self, user, peweh, url_log,pasw):
 		sys.stdout.write(f"\r[ <//> ] {str(self.lo)}/{len(self.id)} OK-:{H}{len(self.ok)}{N} CP-:{K}{len(self.cp)}{N}");sys.stdout.flush()
         for pw in pasw:
             try:
