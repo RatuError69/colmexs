@@ -435,12 +435,27 @@ class crack:
 		
 	#--- UA
 	def GETAGENT(self):
-		versi_android = random.randint(4,12)
-		versi_chrome = str(random.randint(300,325))+".0.0."+str(random.randint(1,8))+"."+str(random.randint(40,150))
-		versi_app = random.randint(410000000,499999999)
-		#ugent = f"Dalvik/2.1.0 (Linux; U; Android {versi_android}; vivo 2019 Build/QP1A.190711.020) [FBAN/MessengerLite;FBAV/{versi_chrome};FBPN/com.facebook.mlite;FBLC/in_ID;FBBV/{versi_app};FBCR/3;FBMF/vivo;FBBD/vivo;FBDV/vivo 2019;FBSV/{str(random.randint(4,10))};FBCA/arm64-v8a:null;FBDM/"+"{density=2.0,width=720,height=1412};]"
-		ugent = f"Dalvik/2.1.0 (Linux; U; Android {versi_android}; SM-J320F Build/LMY47V) [FBAN/FB4A;FBAV/{versi_chrome};FBPN/com.facebook.katana;FBLC/en_GB;FBBV/{versi_app};FBCR/Tele2 LT;FBMF/samsung;FBBD/samsung;FBDV/SM-J320F;FBSV/{str(random.randint(4,10))};FBCA/armeabi-v7a:armeabi;FBDM/"+"{density=3.0,width=1080,height=1920};FB_FW/1;]"
-		return ugent
+		android_version = random.choice([
+			'1.0', '1.1','1.2', '1.5', '1.6', '2.0','2.1', '2.2','2.2.1','2.2.2','2.2.3', '2.3','2.3.1','2.3.2','2.3.3','2.3.4','2.3.5','2.3.6','2.3.7', 
+			'3.0','3.1','3.2','3.2.1','3.2.2','3.2.3','3.2.4','3.2.5','3.2.6', '4.0','4.0.1','4.0.2','4.0.3','4.0.4', '4.1','4.1.1','4.1.2','4.2','4.2.1','4.2.2','4.3', '4.4', 
+			'5.0','5.1.1', '6.0','6.0.1', '7.0','7.1.1','7.1.2', '8.0','8.1.0','8.1.1', '9','9.0', '10', '11', '12', '13' 
+			])
+		android_perangkat = random.choice([
+			'GT-I9190','KOT49H','GT-I9192','KOT49H','GT-I9300I','KTU84P','GT-I9300','IMM76D','GT-I9300','JSS15J','GT-I9301I','KOT4','GT-I9301I','KOT49H','GT-I9500','JDQ39',
+			'GT-I9500','LRX22C','GT-N5100','JZO54K','GT-N7100','KOT49H','GT-N8000','JZO54K','GT-N8000','KOT49H','GT-P3110','JZO54K','GT-P5100','IML74K','GT-P5100',
+			'JDQ','GT-P5100','JDQ39','GT-P5100','JZO54K','GT-P5110','JDQ39','GT-P5200','KOT49H','GT-P5210','KOT49H','GT-P5220','JDQ39','GT-S7390','JZO54K','SAMSUNG','SM-A500F',
+			'SAMSUNG','SM-G532F','SAMSUNG','SM-G920F','SAMSUNG','SM-G935F','SAMSUNG','SM-J320F','SAMSUNG','SM-J510FN','SAMSUNG','SM-N920S','SAMSUNG','SM-T280',
+			'SM-A500FU','MMB29M','SM-A500F','LRX22G','SM-A500F','MMB29M','SM-A500H','MMB29M','SM-G900F','KOT49H','SM-G920F','MMB29K','SM-G920F','NRD90M',
+			'SM-G930F','NRD90M','SM-G935F','MMB29K','SM-G935F','NRD90M','SM-G950F','NRD90M','SM-J320FN','LMY47V','SM-J320F','LMY4','SM-J320F','LMY47V','SM-J320H',
+			'LMY47V','SM-J320M','LMY47V','SM-J510FN','MMB29M','SM-J510FN','NMF2','SM-J510FN','NMF26X','SM-J510FN','NMF26X;','SM-J701F','NRD90M;','SM-T111','JDQ39',
+			'SM-T230','KOT49H','SM-T231','KOT49H','SM-T235','KOT4''SM-T310','KOT49H','SM-T311','KOT4','SM-T311','KOT49H','SM-T315','JDQ39','SM-T525','KOT49H','SM-T531','KOT49H',
+			'SM-T531','LRX22G','SM-T535','LRX22G','SM-T555','LRX22G','SM-T561','KTU84P','SM-T705','LRX22G','SM-T705','LRX22G','SM-T805','LRX22G','SM*T820','NRD90M','SPH-L720','KOT49H'
+			])
+		application_version = str(random.randint(111,555))+'.0.0.'+str(random.randrange(1,50))+str(random.randint(40,555))
+		application_version_code = str(random.randint(000000000,999999999))
+		browser_fbs = random.choice(['com.facebook.adsmanager','com.facebook.lite','com.facebook.orca','com.facebook.katana','com.facebook.mlite'])
+		user_agent_string = f'Dalvik/2.1.0 (Linux; U; Android {str(android_version)}; {str(android_perangkat)} Build/{str(android_perangkat)} [FBAN/FB4A;FBAV/{str(application_version)};FBBV/{str(application_version_code)};FBDM/'+'{density=1.5,width=480,height=800}'+f';FBLC/pl_PL;FBCR/T-Mobile.pl;FBMF/samsung;FBBD/samsung;FBPN/{str(browser_fbs)};FBDV/{str(android_perangkat)};FBSV/4.4.4;nullFBCA/armeabi-v7a:armeabi;]'
+		return user_agent_string
 
 	#--- methode
 	def __crack__(self, user, peweh, url_log):
