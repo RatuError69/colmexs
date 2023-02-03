@@ -71,7 +71,6 @@ U = '\x1b[1;95m'
 B = '\x1b[1;96m'
 P = '\x1b[1;97m'
 C = '\x1b[0m'    
-pepek = ['100067807565861','100028434880529','romi.afrizal.102','romi.alfarabi','']
 
 # JALAN
 def jalan(keliling):
