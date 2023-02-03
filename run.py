@@ -1,8 +1,9 @@
 # coding=utf-8
 
-#     *file name: simple.py (vava)
-#     *copyright: (C) © 2022 ~ Romi Afrizal
-#     *contact me on whatsap: +6281273018924
+#     *file name: Colmexs
+#     *copyright: (C) © 2023 ~ Jessica Putry
+#     *contact me on whatsap: +6287799183568
+#     *Group Facebok: RATU ERROR (owner)
 
 #--- module in python
 import os,sys,requests,re,bs4,datetime,json,time,random,platform
